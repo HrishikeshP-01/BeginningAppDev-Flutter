@@ -1,20 +1,26 @@
-// import dart package needed for all flutter apps
 import "package:flutter/material.dart";
 
-// main calls runApp
-void main()=>runApp(RootWidget());
+void main()=>runApp(FancyHelloWorld());
 
-// root widget
-class RootWidget extends StatelessWidget
+class FancyHelloWorld extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
     return MaterialApp(
-      home: Container(
-        alignment: Alignment.center,
-        child:Text("Hrishi says Hello World"),
-      )
+      home:Scaffold(
+        appBar:AppBar(
+          title:Text("Fancy Hello World"),
+        ),
+        body:Container(
+          alignment:Alignment.center,
+          child:Text("Hrishi says Hello World"),
+        ),
+        floatingActionButton:FloatingActionButton(
+          child:Icon(Icons.thumb_up),
+          onPressed:()=>{},
+        ),
+      ),
     );
   }
 }
