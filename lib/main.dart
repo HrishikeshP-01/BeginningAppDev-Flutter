@@ -1,36 +1,18 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(HelloWorld());
+void main()=>runApp(TestingIcons());
 
-class HelloWorld extends StatelessWidget
+class TestingIcons extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
     return MaterialApp(
-      home:Scaffold(
-        appBar:AppBar(
-          title:Text("Hello world app"),
-        ),
-        body:Container(
-          alignment:Alignment.center,
-          child:TextOfApp("Hrishikesh","P"),
-        ),
+      home:Icon(
+        Icons.email,
+        color:Colors.green,
+        size:200,
       ),
     );
-  }
-}
-
-class TextOfApp extends StatelessWidget
-{
-  final String firstName;
-  final String lastName;
-
-  TextOfApp(this.firstName,this.lastName);
-
-  @override
-  Widget build(BuildContext context)
-  {
-    return Text("$firstName $lastName says Hello World");
   }
 }
