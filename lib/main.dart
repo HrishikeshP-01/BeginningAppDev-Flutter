@@ -1,27 +1,26 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
-void main()=>runApp(MaterialApp(home:TextFieldWithInputDecoration()));
+void main()=>runApp(MaterialApp(home:PasswordExample()));
 
-class TextFieldWithInputDecoration extends StatefulWidget
+class PasswordExample extends StatefulWidget
 {
   @override
   _State createState()=>_State();
 }
 
-class _State extends State<TextFieldWithInputDecoration>
+class _State extends State<PasswordExample>
 {
-  TextEditingController _textEditingController = TextEditingController();
+  TextEditingController _textEditingController=TextEditingController();
 
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
-      body: TextField(
-        controller:_textEditingController,
-        decoration:InputDecoration(
-          hintText:"Hint text",
-          labelText:"Email label text",
-          icon:Icon(Icons.email),
+      body:TextField(
+        controller: _textEditingController,
+        obscureText: true,
+        decoration: InputDecoration(
+          labelText:"Passworld",
         ),
       ),
     );
