@@ -1,29 +1,27 @@
 import "package:flutter/material.dart";
+import 'package:flutter/services.dart';
 
-void main()=>runApp(MaterialApp(home:ChangeKeyboard()));
+void main()=>runApp(MaterialApp(home:TextFieldWithInputFormatter()));
 
-class ChangeKeyboard extends StatefulWidget
+class TextFieldWithInputFormatter extends StatefulWidget
 {
   @override
   _State createState()=>_State();
 }
 
-class _State extends State<ChangeKeyboard>
+class _State extends State<TextFieldWithInputFormatter>
 {
-  TextEditingController _textEditingController=TextEditingController();
-
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
-      body: TextField(
-        controller:_textEditingController,
-        keyboardType:TextInputType.number, // For number
-        // TextInputType.datetime // Numbers with /,-,: symbols
-        // TextInputType.email // a-z,0-9,@
-        // TextInputType.phone // keypad of analog phone
-        decoration: InputDecoration(
-          labelText:"Phone no:"
+      body:TextField(
+        inputFormatters: [
+          FilteringTextInputFormatter.allow(RegExp('[0-9 -]')),
+          LengthLimitingTextInputFormatter(10),
+        ],
+        decoration:InputDecoration(
+          labelText:"Phone no:",
         ),
       ),
     );
