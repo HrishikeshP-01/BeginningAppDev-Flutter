@@ -1,28 +1,26 @@
 import "package:flutter/material.dart";
-import 'package:flutter/services.dart';
 
-void main()=>runApp(MaterialApp(home:TextFieldWithInputFormatter()));
+void main()=>runApp(MaterialApp(home:CheckboxExample()));
 
-class TextFieldWithInputFormatter extends StatefulWidget
+class CheckboxExample extends StatefulWidget
 {
   @override
   _State createState()=>_State();
 }
 
-class _State extends State<TextFieldWithInputFormatter>
+class _State extends State<CheckboxExample>
 {
+  bool checkedValue=false;
+
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
-      body:TextField(
-        inputFormatters: [
-          FilteringTextInputFormatter.allow(RegExp('[0-9 -]')),
-          LengthLimitingTextInputFormatter(10),
-        ],
-        decoration:InputDecoration(
-          labelText:"Phone no:",
-        ),
+      body:CheckboxListTile(
+        value: checkedValue,
+        title:Text("Safesearch"),
+        onChanged:(newValue){},
+        // controlAffinity: ListTileControlAffinity.leading, // To make the checkbox appear before text
       ),
     );
   }
