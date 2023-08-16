@@ -1,30 +1,24 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(TextFieldExample());
+void main()=>runApp(MaterialApp(home:TextFieldWithValue()));
 
-class TextFieldExample extends StatefulWidget
+class TextFieldWithValue extends StatefulWidget
 {
   @override
   _State createState()=>_State();
 }
 
-class _State extends State<TextFieldExample>
+class _State extends State<TextFieldWithValue>
 {
-  String searchTerm="";
+  TextEditingController _textEditingController=TextEditingController(text: "Pre-written value");
 
   @override
   Widget build(BuildContext context)
   {
-    return MaterialApp(
-      home: Scaffold(
-        body:Column(
-          children:<Widget>[
-            Text("Text Field:"),
-            TextField(
-              onChanged:(String val)=>{searchTerm = val},
-            ),
-          ],
-        )
+    return Scaffold(
+      body:TextField(
+        controller:_textEditingController,
+        onChanged: (String val)=>{},
       ),
     );
   }
