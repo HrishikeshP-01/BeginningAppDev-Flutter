@@ -1,24 +1,28 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:TextFieldWithValue()));
+void main()=>runApp(MaterialApp(home:TextFieldWithInputDecoration()));
 
-class TextFieldWithValue extends StatefulWidget
+class TextFieldWithInputDecoration extends StatefulWidget
 {
   @override
   _State createState()=>_State();
 }
 
-class _State extends State<TextFieldWithValue>
+class _State extends State<TextFieldWithInputDecoration>
 {
-  TextEditingController _textEditingController=TextEditingController(text: "Pre-written value");
+  TextEditingController _textEditingController = TextEditingController();
 
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
-      body:TextField(
+      body: TextField(
         controller:_textEditingController,
-        onChanged: (String val)=>{},
+        decoration:InputDecoration(
+          hintText:"Hint text",
+          labelText:"Email label text",
+          icon:Icon(Icons.email),
+        ),
       ),
     );
   }
