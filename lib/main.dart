@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:PasswordExample()));
+void main()=>runApp(MaterialApp(home:ChangeKeyboard()));
 
-class PasswordExample extends StatefulWidget
+class ChangeKeyboard extends StatefulWidget
 {
   @override
   _State createState()=>_State();
 }
 
-class _State extends State<PasswordExample>
+class _State extends State<ChangeKeyboard>
 {
   TextEditingController _textEditingController=TextEditingController();
 
@@ -16,11 +16,14 @@ class _State extends State<PasswordExample>
   Widget build(BuildContext context)
   {
     return Scaffold(
-      body:TextField(
-        controller: _textEditingController,
-        obscureText: true,
+      body: TextField(
+        controller:_textEditingController,
+        keyboardType:TextInputType.number, // For number
+        // TextInputType.datetime // Numbers with /,-,: symbols
+        // TextInputType.email // a-z,0-9,@
+        // TextInputType.phone // keypad of analog phone
         decoration: InputDecoration(
-          labelText:"Passworld",
+          labelText:"Phone no:"
         ),
       ),
     );
