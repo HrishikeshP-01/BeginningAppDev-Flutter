@@ -1,46 +1,27 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:RadioButtonExample()));
+void main()=>runApp(MaterialApp(home:SliderExample()));
 
-class RadioButtonExample extends StatefulWidget
+class SliderExample extends StatefulWidget
 {
-  //RadioButtonExample({Key? key}):super(key: key);
-
   @override
   _State createState()=>_State();
 }
 
-enum SearchType {anywhere, text, title}
-
-class _State extends State<RadioButtonExample>
+class _State extends State<SliderExample>
 {
-  SearchType _searchType=SearchType.title;
+  double _value=0;
 
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
-      body:Column(
-        children: <Widget>[
-          RadioListTile(
-            groupValue:_searchType,
-            value:SearchType.anywhere,
-            title:Text("Anywhere"),
-            onChanged:(SearchType? val){setState(()=>{_searchType=val!});}
-          ),
-          RadioListTile(
-            groupValue:_searchType,
-            value:SearchType.text,
-            title:Text("Title"),
-            onChanged:(SearchType? val){setState(()=>{_searchType=val!});}
-          ),
-          RadioListTile(
-            groupValue:_searchType,
-            value:SearchType.title,
-            title:Text("Title"),
-            onChanged:(SearchType? val){setState(()=>{_searchType=val!});},
-          ),
-        ]
+      body:Slider(
+        label:_value.toString(),
+        value:_value,
+        min:0,max:100,
+        divisions:100,
+        onChanged:(double val){setState(()=>{_value=val});},
       ),
     );
   }
