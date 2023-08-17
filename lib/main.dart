@@ -1,16 +1,17 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:IconBtnExample())));
+void main()=>runApp(MaterialApp(home:FloatingBtnInScaffold()));
 
-class IconBtnExample extends StatelessWidget
+class FloatingBtnInScaffold extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return IconButton(
-      icon:Icon(Icons.delete),
-      color:Colors.blue,
-      onPressed:()=>{print("Icon button pressed")}
+    return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        child: Text("Floating Action button"),
+        onPressed:()=>{print("Floating action button pressed")}
+      ),
     );
   }
 }
