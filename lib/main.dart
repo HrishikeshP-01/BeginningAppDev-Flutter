@@ -1,45 +1,37 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:DropdownExample()));
+void main()=>runApp(MaterialApp(home:SimpleForm()));
 
-class DropdownExample extends StatefulWidget
+class SimpleForm extends StatefulWidget
 {
   @override
   _State createState()=>_State();
 }
 
-enum SearchType {web, image, news, shopping}
-
-class _State extends State<DropdownExample>
+class _State extends State<SimpleForm>
 {
-  SearchType _searchType=SearchType.web;
+   GlobalKey<FormState> _key=GlobalKey<FormState>();
 
-  @override
+   @override
   Widget build(BuildContext context)
-  {
-    return Scaffold(
-      body: DropdownButton<SearchType>(
-        value: _searchType,
-        items: <DropdownMenuItem<SearchType>>[
-          DropdownMenuItem<SearchType>(
-            child:Text("Web"),
-            value:SearchType.web,
-          ),
-          DropdownMenuItem<SearchType>(
-            child:Text("Image"),
-            value:SearchType.image,
-          ),
-          DropdownMenuItem<SearchType>(
-            child:Text("News"),
-            value:SearchType.news,
-          ),
-          DropdownMenuItem<SearchType>(
-            child:Text("Shopping"),
-            value:SearchType.shopping,
-          ),
-        ],
-        onChanged:(SearchType? val){setState(()=>{_searchType=val!});},
-      ),
-    );
-  }
+   {
+     return Scaffold(
+       body: Form(
+         key: _key,
+         autovalidate: true,
+         child: TextFormField(
+           decoration:InputDecoration(
+             label: Text("Name"),
+           ),
+           validator:(String? val){
+             if(val==null){
+               print("Null");
+               return "We need something to search for";
+             }
+             return null;
+           }
+         ),
+       ),
+     );
+   }
 }
