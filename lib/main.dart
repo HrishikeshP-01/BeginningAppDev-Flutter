@@ -1,17 +1,19 @@
+import "package:flutter/material.dart";
 import "package:flutter/cupertino.dart";
-import 'package:flutter/material.dart';
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:RaisedButtonExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:ElevatedBtnExample())));
 
-class RaisedButtonExample extends StatelessWidget
+class ElevatedBtnExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return RaisedButton(
-      child: Text("Raised button"),
-      elevation:5.0,
-      onPressed:()=>{print("Raised button pressed")}
+    return ElevatedButton(
+      child:Text("Elevated button"),
+      style:ElevatedButton.styleFrom(
+        elevation: 20,
+      ),
+      onPressed:()=>{print("Elevated button clicked")}
     );
   }
 }
