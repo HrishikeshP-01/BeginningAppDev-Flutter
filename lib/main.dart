@@ -1,15 +1,15 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:FlatBtnExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:TextBtnExample())));
 
-class FlatBtnExample extends StatelessWidget
+class TextBtnExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return FlatButton(
-      child:Text("Flat Button"),
-      onPressed:()=>{print("Flat button pressed")}
+    return TextButton(
+      child:Text("Text button"),
+      onPressed:()=>{print("Text button - flat button is deprecated")}
     );
   }
 }
