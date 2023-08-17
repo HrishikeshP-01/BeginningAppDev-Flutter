@@ -1,19 +1,15 @@
 import "package:flutter/material.dart";
-import "package:flutter/cupertino.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ElevatedBtnExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:FlatBtnExample())));
 
-class ElevatedBtnExample extends StatelessWidget
+class FlatBtnExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return ElevatedButton(
-      child:Text("Elevated button"),
-      style:ElevatedButton.styleFrom(
-        elevation: 20,
-      ),
-      onPressed:()=>{print("Elevated button clicked")}
+    return FlatButton(
+      child:Text("Flat Button"),
+      onPressed:()=>{print("Flat button pressed")}
     );
   }
 }
