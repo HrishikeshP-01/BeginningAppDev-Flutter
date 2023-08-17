@@ -1,27 +1,44 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:SliderExample()));
+void main()=>runApp(MaterialApp(home:DropdownExample()));
 
-class SliderExample extends StatefulWidget
+class DropdownExample extends StatefulWidget
 {
   @override
   _State createState()=>_State();
 }
 
-class _State extends State<SliderExample>
+enum SearchType {web, image, news, shopping}
+
+class _State extends State<DropdownExample>
 {
-  double _value=0;
+  SearchType _searchType=SearchType.web;
 
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
-      body:Slider(
-        label:_value.toString(),
-        value:_value,
-        min:0,max:100,
-        divisions:100,
-        onChanged:(double val){setState(()=>{_value=val});},
+      body: DropdownButton<SearchType>(
+        value: _searchType,
+        items: <DropdownMenuItem<SearchType>>[
+          DropdownMenuItem<SearchType>(
+            child:Text("Web"),
+            value:SearchType.web,
+          ),
+          DropdownMenuItem<SearchType>(
+            child:Text("Image"),
+            value:SearchType.image,
+          ),
+          DropdownMenuItem<SearchType>(
+            child:Text("News"),
+            value:SearchType.news,
+          ),
+          DropdownMenuItem<SearchType>(
+            child:Text("Shopping"),
+            value:SearchType.shopping,
+          ),
+        ],
+        onChanged:(SearchType? val){setState(()=>{_searchType=val!});},
       ),
     );
   }
