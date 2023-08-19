@@ -1,18 +1,14 @@
 import "package:flutter/material.dart";
-import "package:flutter/cupertino.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:DismissibleExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:ManagePeople())));
 
-class DismissibleExample extends StatelessWidget
+class ManagePeople extends StatelessWidget
 {
-  @override
-  Widget build(BuildContext context)
+  List<Map> FetchPeople()
   {
-    return Dismissible(
-      child:Text("Dismissible"),
-      background:Container(color:Colors.red),
-      secondaryBackground:Container(color:Colors.blue),
-      key:Key(""),
-    );
+    return [
+      {"firstName":"Jim","lastName":"Halpert"}
+    ];
   }
+
 }
