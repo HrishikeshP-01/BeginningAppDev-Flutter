@@ -15,10 +15,10 @@ class ManagePeople extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    var peopleObjects=FetchPeople();
+    List<Map> peopleObjects=FetchPeople();
 
     return ListView(
-      children: peopleObjects.map((person)=>Person(person:person).toList());
+      children: peopleObjects.map((person)=>Person(person["firstName"],person["lastName"])).toList()
     );
   }
 }
