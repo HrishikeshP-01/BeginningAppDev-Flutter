@@ -1,17 +1,16 @@
 import "package:flutter/material.dart";
+import "package:flutter/cupertino.dart";
 
-void main()=>runApp(MaterialApp(home:FloatingBtnInScaffold()));
+void main()=>runApp(MaterialApp(home:Scaffold(body:CupertinoExample())));
 
-class FloatingBtnInScaffold extends StatelessWidget
+class CupertinoExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: Text("Floating Action button"),
-        onPressed:()=>{print("Floating action button pressed")}
-      ),
+    return CupertinoButton(
+      child:Text("Cupertino button(iOS)"),
+      onPressed:()=>{print("Cupertino button pressed")},
     );
   }
 }
