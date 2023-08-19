@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import 'Person.dart';
 
 void main()=>runApp(MaterialApp(home:Scaffold(body:ManagePeople())));
 
@@ -11,4 +12,13 @@ class ManagePeople extends StatelessWidget
     ];
   }
 
+  @override
+  Widget build(BuildContext context)
+  {
+    var peopleObjects=FetchPeople();
+
+    return ListView(
+      children: peopleObjects.map((person)=>Person(person:person).toList());
+    );
+  }
 }
