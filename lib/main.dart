@@ -14,9 +14,6 @@ class VerticalSwipeExample extends StatelessWidget
 {
   List<Map> objectPeople=FetchPeople();
 
-  double swipeStartY=0.0;
-  String swipeDirection="down";
-
   @override
   Widget build(BuildContext context)
   {
@@ -24,13 +21,7 @@ class VerticalSwipeExample extends StatelessWidget
       children: objectPeople.map(
           (person)=>GestureDetector(
             child:Person(person["firstName"],person["lastName"]),
-            onVerticalDragStart:(e){
-              swipeStartY=e.globalPosition.dy;
-            },
-            onVerticalDragUpdate:(e){
-              swipeDirection=(e.globalPosition.dy>swipeStartY)?"down":"up";
-            },
-            onVerticalDragEnd:(e){print("Swipe direction: "+swipeDirection);}
+            onPanEnd:(e){print("Pan detected");}
           )
       ).toList(),
     );
