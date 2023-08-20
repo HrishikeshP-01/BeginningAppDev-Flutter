@@ -18,7 +18,13 @@ class ManagePeople extends StatelessWidget
     List<Map> peopleObjects=FetchPeople();
 
     return ListView(
-      children: peopleObjects.map((person)=>GestureDetector(child: Person(person["firstName"],person["lastName"]))).toList()
+      children: peopleObjects.map((person)=>GestureDetector(
+          child: Person(person["firstName"],person["lastName"]),
+          onLongPress:(){
+            peopleObjects.remove(person);
+            print("Remove"+person["firstName"]+" "+person["lastName"]);
+          }
+      )).toList()
     );
   }
 }
