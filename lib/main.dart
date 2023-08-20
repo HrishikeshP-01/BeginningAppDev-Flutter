@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import "Person.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:PinchExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:SwipeExample())));
 
 List<Map> FetchPeople()
 {
@@ -10,19 +10,29 @@ List<Map> FetchPeople()
   ];
 }
 
-class PinchExample extends StatelessWidget
+class SwipeExample extends StatelessWidget
 {
   List<Map> objectPeople=FetchPeople();
+
+  double swipeStartX=0.0;
+  String swipeDirection="left";
 
   @override
   Widget build(BuildContext context)
   {
     return ListView(
-        children: objectPeople.map((person)=>GestureDetector(
-          child: Person(person["firstName"],person["lastName"]),
-          onScaleUpdate:(e){ // e is event object that holds info about this event. onScaleUpdate is event handler. Event objects are passed into event handlers
-            if(e.scale>2.0){print("Pinch detected");}
-          }
-    )).toList());
+      children: objectPeople.map((person)=>GestureDetector(
+        child:Person(person["firstName"],person["lastName"]),
+        onHorizontalDragStart:(e){
+          swipeStartX=e.globalPosition.dx;
+        },
+        onHorizontalDragUpdate:(e){
+          swipeDirection=(e.globalPosition.dx>swipeStartX)?"right":"left";
+        },
+        onHorizontalDragEnd:(e){
+          print("Swipe direction: "+swipeDirection);
+        }
+      )).toList()
+    );
   }
 }
