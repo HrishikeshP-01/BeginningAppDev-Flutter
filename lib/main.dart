@@ -1,29 +1,29 @@
 import "package:flutter/material.dart";
-import 'Person.dart';
+import "Person.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ManagePeople())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:TapGestureExample())));
 
-class ManagePeople extends StatelessWidget
+List<Map> FetchPeople()
 {
-  List<Map> FetchPeople()
-  {
-    return [
-      {"firstName":"Jim","lastName":"Halpert"}
-    ];
-  }
+  return [
+    {"firstName":"Jim","lastName":"Halpert"}
+  ];
+}
+
+class TapGestureExample extends StatelessWidget
+{
+  List<Map> objectPeople = FetchPeople();
 
   @override
   Widget build(BuildContext context)
   {
-    List<Map> peopleObjects=FetchPeople();
-
     return ListView(
-      children: peopleObjects.map((person)=>GestureDetector(
-          child: Person(person["firstName"],person["lastName"]),
-          onLongPress:(){
-            peopleObjects.remove(person);
-            print("Remove"+person["firstName"]+" "+person["lastName"]);
-          }
+      children: objectPeople.map((person)=>GestureDetector(
+        child: Person(person["firstName"],person["lastName"]),
+        onTap: (){
+          objectPeople.remove(person);
+          print("Removed"+person["firstName"]+" "+person["lastName"]);
+        }
       )).toList()
     );
   }
