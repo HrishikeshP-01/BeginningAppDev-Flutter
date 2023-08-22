@@ -11,9 +11,7 @@ class Person extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Container(
-      child: Text(
-        "$firstName $lastName",
-      ),
+      child:Text("$firstName $lastName")
     );
   }
 }
