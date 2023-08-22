@@ -1,31 +1,19 @@
 import "package:flutter/material.dart";
-import "Person.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ToastExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:FlexExample())));
 
-class ToastExample extends StatelessWidget
+class FlexExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return GestureDetector(
-      child: Person("Jim","Halpert"),
-      onTap: (){
-        print("Tap");
-        String msg = "Person deleted from system";
-        final SnackBar sb=SnackBar(
-          content:Text(msg),
-          duration:Duration(seconds:5),
-          action:SnackBarAction(
-            textColor:Colors.white,
-            label:"Undo",
-            onPressed:(){}
-          ),
-        );
-
-        // Scaffold.of(context).showSnackBar(sb); // Deprecated
-        ScaffoldMessenger.of(context).showSnackBar(sb);
-      }
+    return Flex(
+      direction:(MediaQuery.of(context).orientation==Orientation.landscape)?Axis.horizontal:Axis.vertical,
+      children:<Widget>[
+        Text("Hrishi"),
+        Text("Is"),
+        Text("Trying")
+      ]
     );
   }
 }
