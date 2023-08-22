@@ -8,12 +8,12 @@ class MainAxisAlignmentExample extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Column(
-      mainAxisAlignment:MainAxisAlignment.spaceEvenly,
-      children:<Widget>[
+      mainAxisAlignment:MainAxisAlignment.spaceAround,
+      children:<Text>[
         Text("Hrishi"),
         Text("Is"),
         Text("Trying")
-      ],
+      ]
     );
   }
 }
