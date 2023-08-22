@@ -1,14 +1,14 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:FlexExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:MainAxisAlignmentExample())));
 
-class FlexExample extends StatelessWidget
+class MainAxisAlignmentExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return Flex(
-      direction:(MediaQuery.of(context).orientation==Orientation.landscape)?Axis.horizontal:Axis.vertical,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children:<Widget>[
         Text("Hrishi"),
         Text("Is"),
