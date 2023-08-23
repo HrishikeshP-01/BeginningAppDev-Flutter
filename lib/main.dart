@@ -8,11 +8,11 @@ class CrossAxisAlignmentExample extends StatelessWidget
   Widget build(BuildContext context)
   {
     return Column(
-      crossAxisAlignment:CrossAxisAlignment.end,
+      crossAxisAlignment:CrossAxisAlignment.center,
       children:<Widget>[
         Text("Hrishi"),
         Text("Is"),
-        Text("Trying")
+        Text("Trying"),
       ],
     );
   }
