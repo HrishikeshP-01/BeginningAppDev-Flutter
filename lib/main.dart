@@ -1,19 +1,19 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:MainAxisAlignmentExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:CrossAxisAlignmentExample())));
 
-class MainAxisAlignmentExample extends StatelessWidget
+class CrossAxisAlignmentExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return Column(
-      mainAxisAlignment:MainAxisAlignment.spaceAround,
-      children:<Text>[
+    return Row(
+      crossAxisAlignment:CrossAxisAlignment.start,
+      children:<Widget>[
         Text("Hrishi"),
         Text("Is"),
-        Text("Trying")
-      ]
+        Text("Trying"),
+      ],
     );
   }
 }
