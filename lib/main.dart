@@ -1,19 +1,22 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:CrossAxisAlignmentExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:IntrinsicWidthExample())));
 
-class CrossAxisAlignmentExample extends StatelessWidget
+class IntrinsicWidthExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return Column(
-      crossAxisAlignment:CrossAxisAlignment.center,
-      children:<Widget>[
-        Text("Hrishi"),
-        Text("Is"),
-        Text("Trying"),
-      ],
+    return IntrinsicWidth(
+      child:Column(
+        mainAxisAlignment:MainAxisAlignment.center,
+        crossAxisAlignment:CrossAxisAlignment.stretch,
+        children:<Text>[
+          Text("Hrishi"),
+          Text("Is"),
+          Text("Trying")
+        ],
+      ),
     );
   }
 }
