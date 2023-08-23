@@ -7,12 +7,12 @@ class CrossAxisAlignmentExample extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return Row(
-      crossAxisAlignment:CrossAxisAlignment.start,
+    return Column(
+      crossAxisAlignment:CrossAxisAlignment.end,
       children:<Widget>[
         Text("Hrishi"),
         Text("Is"),
-        Text("Trying"),
+        Text("Trying")
       ],
     );
   }
