@@ -4,6 +4,9 @@ void main()=>runApp(MaterialApp(home:Scaffold(body:CrossAxisAlignmentExample()))
 
 class CrossAxisAlignmentExample extends StatelessWidget
 {
+  /*
+  * Without intrinsic width all widgets would stretch to sides of the screen.
+  * With intrinsic width the widgets will stretch as far as the widest widget*/
   @override
   Widget build(BuildContext context)
   {
