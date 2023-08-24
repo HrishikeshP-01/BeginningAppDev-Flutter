@@ -11,7 +11,7 @@ class ExpandedExample extends StatelessWidget
       mainAxisAlignment:MainAxisAlignment.spaceAround,
       children:<Widget>[
         Text("Hrishi"),
-        Text("Is"),
+        Expanded(child: Text("Is")),
         Text("Trying")
       ],
     );
