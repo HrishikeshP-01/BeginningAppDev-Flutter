@@ -12,7 +12,8 @@ class ExpandedExample extends StatelessWidget
       children:<Widget>[
         Text("Hrishi"),
         Expanded(child: Text("Is")),
-        Text("Trying")
+        Expanded(child: Text("Really")),
+        Text("Trying"),
       ],
     );
   }
