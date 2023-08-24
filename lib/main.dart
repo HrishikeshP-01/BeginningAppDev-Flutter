@@ -1,26 +1,19 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:CrossAxisAlignmentExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:ExpandedExample())));
 
-class CrossAxisAlignmentExample extends StatelessWidget
+class ExpandedExample extends StatelessWidget
 {
-  /*
-  * Without intrinsic width all widgets would stretch to sides of the screen.
-  * With intrinsic width the widgets will stretch as far as the widest widget*/
   @override
   Widget build(BuildContext context)
   {
-    // DONT FORGET TO ADD INTRINSIC WIDTH WHILE USING STRETCH
-    return IntrinsicWidth(
-      child:Column(
-        mainAxisAlignment:MainAxisAlignment.center,
-        crossAxisAlignment:CrossAxisAlignment.stretch,
-        children:<Image>[
-          Image.asset("assets/images/Fig3.png"),
-          Image.asset("assets/images/Fig3.png"),
-          Image.asset("assets/images/Fig3.png")
-        ],
-      ),
+    return Row(
+      mainAxisAlignment:MainAxisAlignment.spaceAround,
+      children:<Widget>[
+        Text("Hrishi"),
+        Text("Is"),
+        Text("Trying")
+      ],
     );
   }
 }
