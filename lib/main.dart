@@ -1,24 +1,22 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ExpandedExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:SizedBoxExample())));
 
-class ExpandedExample extends StatelessWidget
+class SizedBoxExample extends StatelessWidget
 {
+  /*Spacer has a flex factor.
+  * SizedBox lets you specify width & height IN PIXELS*/
   @override
   Widget build(BuildContext context)
   {
     return Row(
       mainAxisAlignment:MainAxisAlignment.spaceAround,
       children:<Widget>[
-        Expanded(child:Text("Hrishi")),
-        Text("|"),
-        Spacer(),
-        Text("|"),
-        Expanded(child:Text("Is")),
-        Text("|"),
-        Spacer(),
-        Text("|"),
-        Expanded(child:Text("Trying"))
+        Text("Hrishi"),
+        Spacer(flex:1),
+        Text("Is"),
+        SizedBox(width:50,height:100),
+        Text("Trying")
       ],
     );
   }
