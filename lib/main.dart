@@ -1,20 +1,20 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:StaticListViewCol())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:ListViewRow())));
 
-class StaticListViewCol extends StatelessWidget
+class ListViewRow extends StatelessWidget
 {
-  /*ListView static allows only widgets manually.
-  * This is used when you only have a few widgets to display.
-  * It's usually used to replace Rows & Columns when they can't contain widgets in screen*/
   @override
   Widget build(BuildContext context)
   {
+    /*scrollDirection parameter decides whether ListView is vertical or horizontal.
+    * It is vertical by default*/
     return ListView(
+      scrollDirection:Axis.horizontal,
       children:<Widget>[
         Text("Hrishi"),
         Text("Is"),
-        Text("Trying")
+        Text("Trying"),
       ],
     );
   }
