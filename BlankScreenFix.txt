@@ -1,0 +1,5 @@
+Despite building the app only a blank screen was displayed.
+Fixed the issue by running the following commands in the terminal:
+flutter clean
+flutter pub get
+flutter pub cache repair
