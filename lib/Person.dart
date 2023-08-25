@@ -2,16 +2,12 @@ import "package:flutter/material.dart";
 
 class Person extends StatelessWidget
 {
-  final String firstName;
-  final String lastName;
-
-  Person(this.firstName,this.lastName){}
+  final String name;
+  Person(this.name){}
 
   @override
   Widget build(BuildContext context)
   {
-    return Container(
-      child:Text("$firstName $lastName")
-    );
+    return Text("$name");
   }
 }
