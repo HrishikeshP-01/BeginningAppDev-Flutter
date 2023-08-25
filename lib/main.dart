@@ -1,21 +1,24 @@
 import "package:flutter/material.dart";
+import "Person.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ListViewRow())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:ListViewBuilderExample())));
 
-class ListViewRow extends StatelessWidget
+List<String> people=[
+  "Hrishi",
+  "Is",
+  "Trying",
+];
+class ListViewBuilderExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    /*scrollDirection parameter decides whether ListView is vertical or horizontal.
-    * It is vertical by default*/
-    return ListView(
-      scrollDirection:Axis.horizontal,
-      children:<Widget>[
-        Text("Hrishi"),
-        Text("Is"),
-        Text("Trying"),
-      ],
+    return ListView.builder(
+      scrollDirection:Axis.vertical,
+      itemCount:people.length,
+      itemBuilder:(BuildContext context, int i){
+        return Person(people[i]);
+      }
     );
   }
 }
