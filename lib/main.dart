@@ -1,24 +1,17 @@
 import "package:flutter/material.dart";
-import "Person.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ListViewBuilderExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:BoxModel())));
 
-List<String> people=[
-  "Hrishi",
-  "Is",
-  "Trying",
-];
-class ListViewBuilderExample extends StatelessWidget
+class BoxModel extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return ListView.builder(
-      scrollDirection:Axis.vertical,
-      itemCount:people.length,
-      itemBuilder:(BuildContext context, int i){
-        return Person(people[i]);
-      }
+    return Container(
+      margin:EdgeInsets.all(5.0),
+      padding:EdgeInsets.all(10.0),
+      decoration:BoxDecoration(border:Border.all(width:1.0)),
+      child: Image.asset("assets/images/Fig3.png")
     );
   }
 }
