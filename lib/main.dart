@@ -1,28 +1,22 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:AlignmentPositioning())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:AlignAndCenter())));
 
-class AlignmentPositioning extends StatelessWidget
+class AlignAndCenter extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    /*When the container is bigger than the widget, you can align the widget
-    * either by specifying co-ordinates Alignment(0,0) - CENTER
-    * or using english words - Alignment.center, Alginment.centerLeft, etc.*/
+    /*If you only want to align/center & don't want any other formatting:
+    * Use Align or Center widgets*/
     return Column(
-      children:<Container>[
-        Container(
-          width:1500,
-          height:200,
-          alignment:Alignment(-1,-1),
-          child:Image.asset("assets/images/Fig3.png")
+      children:<Widget>[
+        Align(
+          alignment:Alignment.centerLeft,
+          child:Text("Hrishikesh")
         ),
-        Container(
-          width:1500,
-          height:200,
-          alignment:Alignment.centerRight,
-          child:Image.asset("assets/images/Fig3.png")
+        Center(
+          child:Text("P")
         ),
       ],
     );
