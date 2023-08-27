@@ -38,6 +38,12 @@ class Checkout extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return Text("Placeholder4");
+    return ElevatedButton(
+      child: Text("Go back"),
+      onPressed: ()=>Navigator.pop(context),
+      /*
+      * or (){Navigator.pop(context);}
+      * */
+    );
   }
 }
