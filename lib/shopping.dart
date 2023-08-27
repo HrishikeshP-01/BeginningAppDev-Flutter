@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class LandingScene extends StatelessWidget
 {
@@ -23,6 +24,20 @@ class ViewProduct extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return Text("Placeholder3");
+    return ElevatedButton(
+      child: Text("Checkout"),
+      onPressed: (){
+        Navigator.pushNamed(context, '/checkout');
+      }
+    );
+  }
+}
+
+class Checkout extends StatelessWidget
+{
+  @override
+  Widget build(BuildContext context)
+  {
+    return Text("Placeholder4");
   }
 }

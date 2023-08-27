@@ -15,6 +15,7 @@ class RoutingExample extends StatelessWidget
         '/' : (BuildContext context)=>LandingScene(),
         '/browse' : (BuildContext context)=>BrowsingScene(),
         '/product': (BuildContext context)=>ViewProduct(),
+        '/checkout': (BuildContext context)=>Checkout(),
       }
     );
   }
