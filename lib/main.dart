@@ -1,23 +1,25 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:SimpleDrawer()));
+void main()=>runApp(MaterialApp(home:DrawerExample()));
 
-class SimpleDrawer extends StatelessWidget
+class DrawerExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
     return Scaffold(
-      appBar: AppBar(
+      appBar:AppBar(
         title: Text("Shopping App"),
       ),
-      drawer: ListView(
-        children: <Widget>[
-          Text("Cart"),
-          Text("Products"),
-          Text("Checkout"),
-          Text("Account"),
-        ],
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            Text("Cart"),
+            Text("Products"),
+            Text("Checkout"),
+            Text("My Account"),
+          ],
+        ),
       ),
     );
   }
