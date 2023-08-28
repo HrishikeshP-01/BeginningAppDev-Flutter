@@ -1,9 +1,8 @@
 import "package:flutter/material.dart";
-import "shopping.dart";
 
-void main()=>runApp(MaterialApp(home:TabBarViewExample()));
+void main()=>runApp(MaterialApp(home:TabBarExample()));
 
-class TabBarViewExample extends StatelessWidget
+class TabBarExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
@@ -11,10 +10,11 @@ class TabBarViewExample extends StatelessWidget
     return DefaultTabController(
       length:2,
       child:Scaffold(
-        body:TabBarView(
-          children:<Widget>[
-            ViewProduct(),
-            Checkout(),
+        appBar:AppBar(title:Text("Shopping App")),
+        body: TabBar(
+          tabs: <Widget>[
+            Tab(icon:Icon(Icons.shopping_bag), child:Text("Cart")),
+            Tab(icon:Icon(Icons.search),child:Text("Browse")),
           ],
         ),
       ),
