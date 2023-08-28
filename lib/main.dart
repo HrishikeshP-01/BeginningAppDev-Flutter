@@ -1,62 +1,17 @@
 import "package:flutter/material.dart";
-import "shopping.dart";
 
-void main()=>runApp(ShoppingCart());
+void main()=>runApp(MaterialApp(home:TabControllerExample()));
 
-class ShoppingCart extends StatelessWidget
-{
- @override
- Widget build(BuildContext context)
- {
-   return MaterialApp(
-     home: Scaffold(
-       appBar: AppBar(title:Text("Shopping App")),
-       body: LandingScene(),
-       drawer: ShoppingDrawer(),
-     ),
-     initialRoute: '/',
-     routes: {
-       '/browse': (BuildContext context) => BrowsingScene(),
-       '/product': (BuildContext context)=>ViewProduct(),
-       '/checkout': (BuildContext context)=>Checkout(),
-     },
-   );
- }
-}
-
-class ShoppingDrawer extends StatelessWidget
+class TabControllerExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return Drawer(
-      child: ListView(
-        children: <Widget>[
-          DrawerHeader(
-            child: Column(
-              children: <Widget>[
-                Image.asset("assets/images/clanLogo.png"),
-                Text("Clan Logo"),
-              ],
-            ),
-          ),
-          ListTile(
-            leading: Icon(Icons.shopping_bag),
-            title: Text("Shopping Cart"),
-            onTap: (){Navigator.pushNamed(context, '/checkout');}
-          ),
-          ListTile(
-            leading: Icon(Icons.search),
-            title:Text("Browse"),
-            onTap: (){Navigator.pushNamed(context, '/browse');}
-          ),
-          ListTile(
-            leading: Icon(Icons.check_outlined),
-            title: Text("Checkout"),
-            onTap : (){Navigator.pushNamed(context, '/checkout');}
-          ),
-        ],
-      ),
+    /*If you don't have a tab controller while using tabs an error gets thrown.
+    * It would be safe to wrap the whole thing in a DefaultTabController widget*/
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(),
     );
   }
 }
