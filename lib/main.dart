@@ -1,22 +1,24 @@
 import "package:flutter/material.dart";
-import "shopping.dart";
 
-void main()=>runApp(RoutingExample());
+void main()=>runApp(MaterialApp(home:SimpleDrawer()));
 
-class RoutingExample extends StatelessWidget
+class SimpleDrawer extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return MaterialApp(
-      title: "Shopping App",
-      initialRoute: "/",
-      routes: {
-        '/' : (BuildContext context)=>LandingScene(),
-        '/browse' : (BuildContext context)=>BrowsingScene(),
-        '/product': (BuildContext context)=>ViewProduct(),
-        '/checkout': (BuildContext context)=>Checkout(),
-      }
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Shopping App"),
+      ),
+      drawer: ListView(
+        children: <Widget>[
+          Text("Cart"),
+          Text("Products"),
+          Text("Checkout"),
+          Text("Account"),
+        ],
+      ),
     );
   }
 }
