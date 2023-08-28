@@ -1,17 +1,23 @@
 import "package:flutter/material.dart";
+import "shopping.dart";
 
-void main()=>runApp(MaterialApp(home:TabControllerExample()));
+void main()=>runApp(MaterialApp(home:TabBarViewExample()));
 
-class TabControllerExample extends StatelessWidget
+class TabBarViewExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    /*If you don't have a tab controller while using tabs an error gets thrown.
-    * It would be safe to wrap the whole thing in a DefaultTabController widget*/
     return DefaultTabController(
-      length: 3,
-      child: Scaffold(),
+      length:2,
+      child:Scaffold(
+        body:TabBarView(
+          children:<Widget>[
+            ViewProduct(),
+            Checkout(),
+          ],
+        ),
+      ),
     );
   }
 }
