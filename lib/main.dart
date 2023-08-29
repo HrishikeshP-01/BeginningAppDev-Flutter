@@ -17,7 +17,10 @@ class SimpleDialogExample extends StatelessWidget
               children: <Widget>[
                 Text("Hi"),
                 Text("Hrishi"),
-                Text("Here"),
+                ElevatedButton(
+                  child:Text("Go Back"),
+                  onPressed:()=>Navigator.pop(context),
+                ),
               ],
             );
           }
