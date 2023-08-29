@@ -1,25 +1,30 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:BottomAppBar()));
+void main()=>runApp(MaterialApp(home:AlertDialogExample()));
 
-class BottomAppBar extends StatelessWidget
+class AlertDialogExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        bottomNavigationBar: Material(
-          color: Theme.of(context).primaryColor,
-          child: TabBar(
-              tabs: <Widget>[
-                Tab(icon:Icon(Icons.shopping_bag), child: Text("Shopping Bag")),
-                Tab(icon:Icon(Icons.search), child: Text("Browse")),
-              ]
-          ),
-        ),
-      ),
+    return ElevatedButton(
+      child: Text("Press me!"),
+      onPressed: (){
+        showDialog<void>(
+          context: context,
+          builder: (BuildContext context){
+            return AlertDialog(
+              content: Text("Click OK to go back"),
+              actions: <Widget>[
+                ElevatedButton(
+                  child: Text("OK"),
+                  onPressed: ()=>Navigator.pop(context),
+                ),
+              ],
+            );
+          }
+        );
+      }
     );
   }
 }
