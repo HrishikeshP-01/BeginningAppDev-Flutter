@@ -1,20 +1,18 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body: TextStyleExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:CustomFont())));
 
-class TextStyleExample extends StatelessWidget
+class CustomFont extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return Text("Hi there!",
-    style: TextStyle(
-      color:Colors.blue,
-      decoration: TextDecoration.lineThrough,
-      fontFamily:"Courier",
-      fontSize:14,
-      fontStyle: FontStyle.italic,
-      fontWeight: FontWeight.bold,
-    ));
+    return Text(
+      "Hi there!",
+      style: TextStyle(
+        color: Colors.red,
+        fontFamily: "Poppins",
+      ),
+    );
   }
 }
