@@ -1,25 +1,22 @@
 import "package:flutter/material.dart";
-import "dart:math";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ListColors())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:ColorUsingHex())));
 
-class ListColors extends StatelessWidget
+class ColorUsingHex extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
     return GridView.count(
-      crossAxisCount: 4,
-      children: GetWidgets()
+      crossAxisCount: 2,
+      children: GetContainers(),
     );
   }
 }
 
-List<Widget> GetWidgets()
+List<Widget> GetContainers()
 {
-  Random rnd=Random();
-  return List.generate(10,
-      (int i)=>Container(
-        color: Color.fromRGBO(rnd.nextInt(255),rnd.nextInt(255),rnd.nextInt(255),1)
-      ));
+  return List.generate(
+    10, (int i)=>Container(color: Color(0xFFFF7F00))
+  );
 }
