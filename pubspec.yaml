@@ -91,3 +91,8 @@ flutter:
   assets:
     - assets/images/Fig3.png
     - assets/images/
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: /fonts/Poppins-Regular.ttf
