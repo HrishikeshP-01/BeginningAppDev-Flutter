@@ -7,16 +7,13 @@ class ColorUsingHex extends StatelessWidget
   @override
   Widget build(BuildContext context)
   {
-    return GridView.count(
-      crossAxisCount: 2,
-      children: GetContainers(),
+    return Container(
+      child: Text("Text Color", style:TextStyle(color:Colors.white)),
+      decoration: BoxDecoration(
+        color: Colors.red,
+        border: Border.all(color: Colors.yellow),
+      ),
     );
   }
 }
 
-List<Widget> GetContainers()
-{
-  return List.generate(
-    10, (int i)=>Container(color: Color(0xFFFF7F00))
-  );
-}
