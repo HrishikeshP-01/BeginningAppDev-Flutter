@@ -1,17 +1,24 @@
 import "package:flutter/material.dart";
+import "dart:math";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:CustomFont())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:BoxShadowExample())));
 
-class CustomFont extends StatelessWidget
+class BoxShadowExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return Text(
-      "Hi there!",
-      style: TextStyle(
-        color: Colors.red,
-        fontFamily: "Poppins",
+    return Container(
+      height:300,
+      width:400,
+      decoration: BoxDecoration(
+        color: Colors.grey,
+        boxShadow: [
+          BoxShadow(
+            offset: Offset.fromDirection(0.25*pi,10.0),
+            blurRadius:10.0,
+          ),
+        ]
       ),
     );
   }
