@@ -1,25 +1,36 @@
 import "package:flutter/material.dart";
-import "dart:math";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:BoxShadowExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:BorderExample())));
 
-class BoxShadowExample extends StatelessWidget
+class BorderExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
     return Container(
-      height:300,
-      width:400,
+      width:300,
+      height: 200,
       decoration: BoxDecoration(
-        color: Colors.grey,
-        boxShadow: [
-          BoxShadow(
-            offset: Offset.fromDirection(0.25*pi,10.0),
-            blurRadius:10.0,
+        color: Colors.purple,
+        border: Border(
+          top: BorderSide(
+            width: 10,
+            color:Colors.red,
           ),
-        ]
-      ),
+          left: BorderSide(
+            width: 5,
+            color: Colors.yellow,
+          ),
+          right: BorderSide(
+            width: 15,
+            color:Colors.grey,
+          ),
+          bottom: BorderSide(
+            width: 8,
+            color:Colors.black,
+          ),
+        ),
+      )
     );
   }
 }
