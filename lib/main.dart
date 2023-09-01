@@ -1,18 +1,26 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ContainerForegroundExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:StackExample())));
 
-class ContainerForegroundExample extends StatelessWidget
+class StackExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
-    return Container(
-      width:300,
-      height:200,
-      child:Text("Hi there!"),
-      foregroundDecoration:BoxDecoration(
-        color:Colors.yellow.withOpacity(0.5),
+    return Card(
+      child:Stack(
+        children: <Widget>[
+          Image.asset("assets/images/clanLogo.png"),
+          Column(
+            children: <Widget>[
+              Text("Hrishikesh P",
+              style:Theme.of(context).textTheme.headline2?.copyWith(color:Colors.orange)),
+              //Expanded(child:Container()),
+              Text("hrishikeshpramodnair@gmail.com",
+              style:Theme.of(context).textTheme.bodyText1?.copyWith(color:Colors.orange)),
+            ],
+          ),
+        ],
       ),
     );
   }
