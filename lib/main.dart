@@ -1,19 +1,38 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ShapedContainers())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:SupermanShield())));
 
-class ShapedContainers extends StatelessWidget
+class SupermanShield extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
   {
     return Container(
-      width: 100,
-      height: 100,
-      decoration: BoxDecoration(
-        color:Colors.orange,
-        shape:BoxShape.circle,
+      child: CustomPaint(
+        size: Size(200,200),
+        painter: SupermanShieldPainter(),
       ),
     );
   }
+}
+
+class SupermanShieldPainter extends CustomPainter
+{
+  @override
+  void paint(Canvas canvas,Size size)
+  {
+    canvas.drawPath(
+      Path()..moveTo(25,0)
+          ..lineTo(125,0)
+          ..lineTo(150,25)
+          ..lineTo(75,125)
+          ..lineTo(0,25)
+          ..lineTo(25,0),
+      Paint()
+        ..style=PaintingStyle.fill
+        ..color=Colors.red
+    );
+  }
+  @override
+  bool shouldRepaint(SupermanShieldPainter oldDelegate)=>false;
 }
