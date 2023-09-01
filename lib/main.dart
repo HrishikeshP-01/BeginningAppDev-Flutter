@@ -1,8 +1,8 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:ColorWithOpacity())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:ContainerForegroundExample())));
 
-class ColorWithOpacity extends StatelessWidget
+class ContainerForegroundExample extends StatelessWidget
 {
   @override
   Widget build(BuildContext context)
@@ -11,8 +11,8 @@ class ColorWithOpacity extends StatelessWidget
       width:300,
       height:200,
       child:Text("Hi there!"),
-      decoration:BoxDecoration(
-        color:Colors.red.withOpacity(0.5),
+      foregroundDecoration:BoxDecoration(
+        color:Colors.yellow.withOpacity(0.5),
       ),
     );
   }
