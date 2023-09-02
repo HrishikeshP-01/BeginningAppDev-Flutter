@@ -1,26 +1,20 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:TextUsingThemeExamples())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:CopyWithExample())));
 
-class TextUsingThemeExamples extends StatelessWidget
+class CopyWithExample extends StatelessWidget
 {
+  /*
+  * When you want to apply a style from a theme but want to change a few properties
+  * use copyWith()
+  * You are reaching into a current syle, making a copy of it, adding a few changes to the
+  * copy and then using it.
+  * Therefore, the original style is unaltered*/
   @override
   Widget build(BuildContext context)
   {
-    return Column(
-      children: <Text>[
-        Text("headline1", style:Theme.of(context).textTheme.headline1),
-        Text("bodyText1", style:Theme.of(context).textTheme.bodyText1),
-        Text("bodyText2",style:Theme.of(context).textTheme.bodyText2),
-        Text("button",style:Theme.of(context).textTheme.button),
-        Text("caption",style:Theme.of(context).textTheme.caption),
-        Text("headline2",style:Theme.of(context).textTheme.headline2),
-        Text("headline3",style:Theme.of(context).textTheme.headline3),
-        Text("headline4",style:Theme.of(context).textTheme.headline4),
-        Text("subtitle1",style:Theme.of(context).textTheme.subtitle1),
-        Text("subtitle2",style:Theme.of(context).textTheme.subtitle2),
-        Text("overline",style:Theme.of(context).textTheme.overline),
-      ],
+    return Text("Hi there",
+    style:Theme.of(context).textTheme.bodyText2?.copyWith(color:Colors.red),
     );
   }
 }
