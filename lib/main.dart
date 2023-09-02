@@ -1,20 +1,19 @@
 import "package:flutter/material.dart";
 
-void main()=>runApp(MaterialApp(home:Scaffold(body:CopyWithExample())));
+void main()=>runApp(MaterialApp(home:Scaffold(body:StatefulExample())));
 
-class CopyWithExample extends StatelessWidget
+class StatefulExample extends StatefulWidget
 {
-  /*
-  * When you want to apply a style from a theme but want to change a few properties
-  * use copyWith()
-  * You are reaching into a current syle, making a copy of it, adding a few changes to the
-  * copy and then using it.
-  * Therefore, the original style is unaltered*/
+  @override
+  _StatefulExample createState()=>_StatefulExample();
+}
+
+class _StatefulExample extends State<StatefulExample>
+{
   @override
   Widget build(BuildContext context)
   {
-    return Text("Hi there",
-    style:Theme.of(context).textTheme.bodyText2?.copyWith(color:Colors.red),
-    );
+    return Text("Stateful widget skeleton");
   }
 }
+
