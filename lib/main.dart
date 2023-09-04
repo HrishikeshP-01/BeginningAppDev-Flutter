@@ -19,7 +19,12 @@ class _ColorPickerState extends State<ColorPicker>
   {
     return Column(
       children: <Widget>[
+        // This widget uses the variables a.k.a state
         ColorCircle(Color.fromRGBO(_red,_green,_blue,1), 200.0),
+        /* We are passing a reference of the function _setColor
+        this lets the child widgets pass their data into the parent function
+        so technically the parent is using child data
+         */
         ColorValueChanger("Red", 0, _setColor),
         ColorValueChanger("Green",0,_setColor),
         ColorValueChanger("Blue",0,_setColor),
