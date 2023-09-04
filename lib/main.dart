@@ -18,6 +18,12 @@ class _ColorPickerState extends State<ColorPicker>
   Widget build(BuildContext context)
   {
     return Column(
+      children: <Widget>[
+        ColorCircle(Color.fromRGBO(_red,_green,_blue,1), 200.0),
+        ColorValueChanger("Red", 0, _setColor),
+        ColorValueChanger("Green",0,_setColor),
+        ColorValueChanger("Blue",0,_setColor),
+      ]
     );
   }
 
