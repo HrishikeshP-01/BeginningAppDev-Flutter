@@ -12,13 +12,21 @@ class ColorPicker extends StatefulWidget
 
 class _ColorPickerState extends State<ColorPicker>
 {
+  int _red=0, _blue=0, _green=0;
+
   @override
   Widget build(BuildContext context)
   {
     return Column(
-      children: <Widget>[
-
-      ],
     );
+  }
+
+  void _setColor(String property, int value)
+  {
+    setState((){
+      _red=(property=="Red")?value:_red;
+      _green=(property=="Green")?value:_green;
+      _blue=(property=="Blue")?value:_blue;
+    });
   }
 }
