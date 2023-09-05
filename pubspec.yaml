@@ -29,6 +29,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    path_provider: ^X.Y.Z
+    # The ^ tells flutter that it can use the latest version of the library
+    # as long as it doesn't go above the major version X
+    # Some Flutter devs think it's risky to let dev tools to decide which version to use
+    # So they OMIT the carat
 
 
   # The following adds the Cupertino Icons font to your application.
