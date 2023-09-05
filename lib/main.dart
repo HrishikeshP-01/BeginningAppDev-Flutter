@@ -1,5 +1,4 @@
-int x=10; // Integer
-double y = 2.0; // Double
-bool z = true; // Boolean
-String s = "hello"; // String
-dynamic d; // Dynamic. Dynamic variables can change types at any time. USE SPARINGLY
+/*Square brackets means list or array.
+* In dart list & array are the same.
+* Optional angular brackets <> shows the type*/
+List<dynamic> list = [1,"two",3.0];
