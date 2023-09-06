@@ -1,3 +1,5 @@
+/*Elvis operator
+* If object is not null, evaluate property.
+* Prevents null exceptions from throwing.*/
 String name;
-String res = name?? "name not initialized";
-// If name is set use it. Otherwise set res to "name not initialized"
+print(name?.length);
