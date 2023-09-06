@@ -1,2 +1,3 @@
-int x=10;
-String response = (x>100)> "Yes":"No";
+String name;
+String res = name?? "name not initialized";
+// If name is set use it. Otherwise set res to "name not initialized"
