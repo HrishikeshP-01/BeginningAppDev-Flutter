@@ -1,5 +1,4 @@
-/*Elvis operator
-* If object is not null, evaluate property.
-* Prevents null exceptions from throwing.*/
-String name;
-print(name?.length);
+for(int i=0;i<10;i++)
+{
+  print(i);
+}
