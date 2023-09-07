@@ -1,29 +1,7 @@
-class Name
-{
-  String first;
-  String last;
-  String initial;
-}
+/* Type Inference
+Dart will infer type based on value being assigned to it.*/
 
-class Person
-{
-  // Classes have properties
-  int id;
-  Name name; // Another class can be used as type
-  String email;
-  String phone;
-  // Classes have methods
-  void save()
-  {
-    // Logic to add name to database
-  }
-
-  // Typical constructor
-  Person()
-  {
-    id=0;
-    name=Name();
-    email="";
-    phone="";
-  }
-}
+var i = 12; // i is inferred as int
+i = 13; // Possible because i is int
+i = "X"; // Not possible because i is int
+var str = "X"; // str is inferred as string
