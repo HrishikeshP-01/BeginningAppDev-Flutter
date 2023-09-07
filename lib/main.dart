@@ -2,5 +2,19 @@ class Name
 {
   String first;
   String last;
-  String initials;
+  String initial;
+}
+
+class Person
+{
+  // Classes have properties
+  int id;
+  Name name; // Another class can be used as type
+  String email;
+  String phone;
+  // Classes have methods
+  void save()
+  {
+    // Logic to add name to database
+  }
 }
