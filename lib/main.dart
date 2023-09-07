@@ -1,1 +1,3 @@
-final int x = 10; // Final means that once value is assigned it can't be changed
+const int x = 10;
+// const once assigned value can't change
+// For const value is set during run-time & is embedded in installation bundle
