@@ -17,4 +17,13 @@ class Person
   {
     // Logic to add name to database
   }
+
+  // Typical constructor
+  Person()
+  {
+    id=0;
+    name=Name();
+    email="";
+    phone="";
+  }
 }
