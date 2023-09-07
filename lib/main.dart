@@ -1,5 +1,6 @@
-int i=0;
-while(i<10)
+class Name
 {
-  print(i++);
+  String first;
+  String last;
+  String initials;
 }
