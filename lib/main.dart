@@ -1,7 +1,7 @@
-Map<String, dynamic>Person
-{
-  "first":"Ross",
-  "second":"Geller",
-  "dob":DateTime.parse("1972-07-16"),
-  "phno":999999999,
-}
+// Just like in JS, functions are first class objects
+/* They can be passed around like data, returned from another fn, passed to a fn
+or even assigned to a variable
+ */
+Function sayHi = (String name)=>{print("HI $name")};
+Function meToo = sayHi;
+meToo("Hrishi");
