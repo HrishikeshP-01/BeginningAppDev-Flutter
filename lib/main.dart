@@ -1,7 +1,14 @@
-// Enclose named parameters in curly braces
-void sendEmail({String name, int phno})
+class Person
 {
-  // code
+  // Named parameters works great with constructors too
+  Person({String firstName, String lastName})
+  {
+    Name name = Name()..first=firstName..last=lastName;
+  }
 }
-// order of named parameters are not important
-sendEmail(name:"Hrishi", phno: 999);
+
+class Name
+{
+  String first = "";
+  String last = "";
+}
