@@ -1,7 +1,17 @@
-// Just like in JS, functions are first class objects
-/* They can be passed around like data, returned from another fn, passed to a fn
-or even assigned to a variable
- */
-Function sayHi = (String name)=>{print("HI $name")};
-Function meToo = sayHi;
-meToo("Hrishi");
+/*
+Big/Fat arrow
+When you have a fn that RETURNS a value IN 1 LINE OF CODE
+you can put the returned value on the right side of => & argument list on the left
+The big arrow is syntactic sugar allowing devs to be more expressive with less code.*/
+
+int triple(int val)
+{
+  return val*3;
+}
+
+Function triple2 = (int val)
+{
+  return val*3;
+};
+
+Function triple3 = (int val)=> val*3;
