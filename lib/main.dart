@@ -1,14 +1,10 @@
 class Person
 {
-  // Named parameters works great with constructors too
-  Person({String firstName, String lastName})
-  {
-    Name name = Name()..first=firstName..last=lastName;
-  }
-}
 
-class Name
-{
-  String first = "";
-  String last = "";
 }
+/*In Dart it's possible & encouraged to avoid using the new keyword while
+* instantiating a class*/
+// Don't use new
+Person no = new Person();
+// Do
+Person yes = Person();
