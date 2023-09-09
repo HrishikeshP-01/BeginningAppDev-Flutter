@@ -1,6 +1,7 @@
-void sendEmail(String name, int phno)
+// Enclose named parameters in curly braces
+void sendEmail({String name, int phno})
 {
   // code
 }
-
-sendEmail("Hrishi", 999);
+// order of named parameters are not important
+sendEmail(name:"Hrishi", phno: 999);
