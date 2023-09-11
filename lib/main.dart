@@ -1,13 +1,8 @@
-class Name
+class Account
 {
-  String first;
-  String last;
-
-  Name(this.first, this.last){}
-  /*Is equivalent to:
-  * Name(String first, String last)
-  * {
-  * this.first=first;
-  * this.last=last;
-  * }*/
+  // Dart doesn't have access modifiers like public, private etc.
+  // All variables are public by default
+  // To make a var private just add an underscore in front of its name
+  String name; // public
+  String _password; // private
 }
