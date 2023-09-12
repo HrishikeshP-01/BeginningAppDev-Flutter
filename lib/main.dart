@@ -9,4 +9,12 @@ class Person
     first="";
     last = "";
   }
+
+  // A named constructor
+  Person.withName({String firstName, String lastName})
+  {
+    first=firstName;
+    last = lastName;
+  }
+
 }
