@@ -2,7 +2,10 @@ class Person
 {
   String first;
   String last;
-
+  // Dart doesn't have constructor overloading
+  // We can however have constructors with different names in the same class
+  // These are called named constructors & syntax is
+  // className.constructorName
   // Typical constructor
   Person()
   {
