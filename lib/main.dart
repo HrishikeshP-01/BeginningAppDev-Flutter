@@ -23,4 +23,8 @@ class Person
     // code here
   }
 
+  // Using the constructors
+  Person p = Person();
+  Person p1 = Person.withName(firstName:"H",lastName: "P");
+  Person p2 = Person.byId(0);
 }
