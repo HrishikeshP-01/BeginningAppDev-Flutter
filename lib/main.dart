@@ -17,4 +17,10 @@ class Person
     last = lastName;
   }
 
+  // Another named constructor
+  Person.byId(int id)
+  {
+    // code here
+  }
+
 }
